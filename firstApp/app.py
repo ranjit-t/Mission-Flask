@@ -23,8 +23,9 @@ def create_app(db_uri=None):
     app.config["OPENAPI_URL_PREFIX"] = "/"
     app.config["OPENAPI_SWAGGER_UI_PATH"] = "/doc"
     app.config["OPENAPI_SWAGGER_UI_URL"] = "https://cdn.jsdelivr.net/npm/swagger-ui-dist/"
-    app.config["SQLALCHEMY_DATABASE_URI"] = db_uri or os.getenv(
-        "DATABASE_URI", "sqlite:///data.db")  # conncting to database
+    # app.config["SQLALCHEMY_DATABASE_URI"] = db_uri or os.getenv(
+    #     "DATABASE_URI", "sqlite:///data.db")  # conncting to database
+    app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:Postgres123@localhost/Test"
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False  # audit trail
     db.init_app(app)
 

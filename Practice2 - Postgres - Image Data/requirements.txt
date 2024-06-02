@@ -4,4 +4,3 @@ flask-smorest
 flask_cors
 python-dotenv
 marshmallow
-psycopg2-binary

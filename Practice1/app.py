@@ -3,13 +3,11 @@ from flask import Flask
 from flask_smorest import Api
 from resources.users import blp as UserBlueprint
 from resources.contacts import blp as ContactBlueprint
+from flask_cors import CORS
 
 
 from db import db
 # import models
-
-
-from flask_cors import CORS
 
 
 def create_app(db_uri=None):
@@ -23,8 +21,9 @@ def create_app(db_uri=None):
     app.config["OPENAPI_URL_PREFIX"] = "/"
     app.config["OPENAPI_SWAGGER_UI_PATH"] = "/doc"
     app.config["OPENAPI_SWAGGER_UI_URL"] = "https://cdn.jsdelivr.net/npm/swagger-ui-dist/"
-    app.config["SQLALCHEMY_DATABASE_URI"] = db_uri or os.getenv(
-        "DATABASE_URI", "sqlite:///data.db")  # conncting to database
+    # app.config["SQLALCHEMY_DATABASE_URI"] = db_uri or os.getenv(
+    #     "DATABASE_URI", "sqlite:///data.db")  # conncting to database
+    app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:Focusranjith%401@localhost/Test"
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False  # audit trail
     db.init_app(app)
 
