@@ -2,6 +2,7 @@ from flask import request
 from flask.views import MethodView
 from flask_smorest import Blueprint, abort
 from models import ItemModel
+from models.store import StoreModel
 from schemas import ItemSchema
 from db import db
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError

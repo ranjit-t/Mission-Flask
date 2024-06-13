@@ -5,6 +5,8 @@ from flask_smorest import Api
 from db import db
 # import models
 
+from models.item import ItemModel
+from models.store import StoreModel
 from resources.store import blp as StoreBluePrint
 from resources.item import blp as ItemBluePrint
 
