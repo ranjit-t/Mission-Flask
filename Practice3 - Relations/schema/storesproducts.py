@@ -26,8 +26,3 @@ class ProductSchema(PlainProductSchema):
     store_id = fields.Int(required=True, load_only=True)
     store = fields.Nested(PlainStoreSchema(),  dump_only=True)
     tags = fields.List(fields.Nested(TagSchema()), dump_only=True)
-
-
-# class PlainTagSchema(Schema):
-#     id = fields.Int(dump_only=True)
-#     tag = fields.Str(required=True)

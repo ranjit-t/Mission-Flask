@@ -32,9 +32,6 @@ class AddProduct(MethodView):
                     db.session.add(tag)
                 product.tags.append(tag)
             db.session.commit()
-            if tag:
-                product.tags.append(tag)
-            db.session.commit()
             return product
         except IntegrityError:
             abort(400, message="Product already exists")
